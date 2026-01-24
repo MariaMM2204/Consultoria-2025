@@ -1,35 +1,53 @@
 # Treball Final de Consultoria Éstadística 2025
 
-Maria Marín Méndez (1668394) i Andrea (16393232)
-
-En aquest repositori es recull el desenvolupament del **Treball Final de Consultoria Estadística 2025**, en el qual s’apliquen eines i metodologies estadístiques per analitzar les dades de la Loteria de Nadal, fins a l'any 2025. 
-
-L’objectiu principal del treball és proporcionar una anàlisi rigorosa i estructurada que permeti donar suport a la presa de decisions, tot justificant les tècniques utilitzades i els resultats obtinguts. El repositori conté el codi, les dades utilitzades i la documentació necessària per garantir la reproductibilitat i la transparència del treball realitzat.
+Andrea Acuña Villagaray (16393232) i Maria Marín Méndez (1668394)  
 
 
-**Funcionament de la Loteria de Nadal (ElGordo):**
-El sorteig es basa en un sistema de bitllets, sèries i dècims:
-- **Números en joc:** hi ha 100.000 de diferents (del 00000 al 99999)
-- **Sèries:** de cada número se n'emeten diverses sèries (per exemple, 195 sèries el 2024). això vol dir que en un mateix número es repeteix 195 vegades.
-- **Dècim:** és la unitat mínima que comprem. Cada sèrie té 10 dècims.
-        - el preu d'un dècim és de 20€
-        - el preu d'un bitllet senser (10 dècims) és de 200€.
+En aquest repositori es recull el desenvolupament del **Treball Final de Consultoria Estadística 2025**, centrat en l'anàlisi exhaustiva de la Loteria de Nadal des de la seva vessant més tècnica. L'objectiu no és sols descriure el sorteig, sinó avaluar amb rigor estadístic si la variabilitat dels resultats històrics (des del 2000 fins a l'anys 2025) respon purament a l'atzar o si existeixen anomalies mesurables en l'homogeneïtat del sistes,
 
-El sistema de dos bombos:
-- Bombo de números: conté 100.000 boles de fusta, cadascuna amb un número.
-- Bombo de premis: conté 1.807 boles amb els imports dels premis.
-- La dinàmica: Surten dues boles simultàniament (una de cada bombo). Això vol dir que qualsevol número pot rebre qualsevol premi. El sorteig no acaba fins que el bombo de premis queda buit.
+A través de metodologies de web scraping, tests d'independència .....
 
-Quan parlem del "Gordo", ens referim al Primer Premi, però n'hi ha molts més:
-400.000€ el gordo (1r)
-125.000€ (2n)
-50.000€ (3r)
-20.000€ (4rt) n'hi ha 2 números premiats
-6.000€ (5é) n'hi ha 8 números premiats
-100€ (La pedrea) el "soroll" de fons, 1794 premis
-20€ (reintegrament) si l'última xifra coincideix amb el Gordo
+La Loteria de Nadal no és sols un sorteig de boles; és l'unic moment de l'any en què un país sencer es posa d'acord per ignorar les lleis de l'estadística. Des d'un punt de vista matemàtic, és un "impost a l'esperança", però des del punt de vista de lesa dades, és un ecosistema fascinant.
 
-Atenció: Hisenda es queda amb el 20% de qualsevol premi que superi els 40.000€.
+**L'arquitectura del "GORDO"**
+
+La loteira no ven números a l'atzar, sinó que segueix una jerarquia rígida que determina quants diners es mouen i quina probabilitat real tens de guanyar.
+
+El sistema treballa amb un ventall de 100.000 números (des del 00000 fins al 99999). Això ens deixa una probabilitat de guanyar el primer premi amb un sol dècim de un 0.001%.
+
+Per al 2025, SELAE (Societat Estatal Loteries i Apostes de l'Estat) va emetre 197 sèries de cada número. Això significa que de cada número n'hi ha 197 billets idèntic repartits per tot l'estat. On cada sèroe es dovodeox en 10 dècims, el que ens dona un total de 1970 dècims per cada número.
+
+- Preu del dècim: 20€
+- Recaptació potencila, si es ven tot, el sorteig mou 3940 milions d'euros. D'aquests, el 705 es destina a premis.
+
+El que veiem a la tele és folkore, però el que hi ha dins dels bombos és física pura. com ens explica el professor Badiella, el sistema està dissenyat per se homogeni.
+
+Hi ha 100.000 boles al bombo gran, totes fetes de gusta deboic, amb un diàmetre de 3cm i un pes unificat. On per evitar que el pes de la pintura alteri el camí de la bola cap a la trompeta, els números estan impresos amb l'àser. Així s'elimina la teoria que els números amb més "tinta", com el 88.888, pesen més que el 11.111.
+
+Per a realtizar el sorteig es fan servis dos bombos que giren simultàniament: un per als números i un latre amb les 1807 boles de premis. fins que el bombo petit no queda buit, el sorteig no es dona per acabat.
+
+**El repartiment del "Pastís"**
+
+Tot i que el focus està en el Gordo, la realitat és que el sorteig és una pluja fina de premis petits que serveixen per "alimentar l'esperança" de cara a l'anys següent.
+
+| Premi                   | Import per dècim | Boles premiades     | Probalitat |
+|-------------------------|------------------|---------------------|------------|
+| 1r  premi ("el Gordo")  | 400.000€         | 1                   | 0,001%     |
+| 2n  premi               | 125.000€         | 1                   | 0,001%     |
+| 3r  premi               | 50.000€          | 1                   | 0,001%     |
+| 4rt premi               | 20.000€          | 2                   | 0,002%     |
+| 5é premi                | 6.000€           | 8                   | 0,008%     |
+| La Pedrea               | 100€             | 1.794               | 1,794%     |
+| Reintegrament           | 20€              | 1 de cada 10 xifres | 10,00%     |
+
+Aleshores amb aquesta informació la probabilitat de que et toqui el Gordo és la mateixa que la de qualsevol número, 0,001%. Gairebé el 99% dels números que reben premi directe del bombo són pedres de 100€ (1.794 de 1.807). Per altra banda, tenim un 10% de possibilitats de recuperar 20€ si l'última xifra del teu número coincideix amb la del Gordo.
+
+Hem de recordar que per als tres primers premis, el premi realment és menor, ja que Hisenda entra al joc aplicant un 20% d'impost a qualsevol premi que superi els 40.000€. Això vol dir que, el guanyador del primer premi realment es de 328.000€, ja que els premiers 40.000€ estan exempts i es paga 20% dels 360.000€ restant. El segon premi sseria de 108.000€ i del trecer 48.000€.
+
+
+
+
+
 
 
 
