@@ -1,6 +1,6 @@
 ---
 title: "Base de dades"
-author: "Maria Marín Méndez (1668394)"
+author: "Andrea Acuña Villagaray (1639232) i Maria Marín Méndez (1668394)"
 date: "`r Sys.Date()`"
 output: pdf_document
 ---
@@ -11,11 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Llegim les dades:
 
-```{r}
-library(dplyr)
-library(stringr)
-library(tibble)
-library(stringi)
+```{r, warning=FALSE, message=FALSE}
+library(dplyr); library(stringr); library(tibble); library(stringi); library(purrr); library(tidyverse)
 
 leer_loteria <- function(archivo) {
   
@@ -124,4 +121,5 @@ a <- 2015:2024
 archivos <- paste0("dades/b", a, ".txt")
 datos_loteria <- map_dfr(archivos, leer_loteria)
 ```
+
 
