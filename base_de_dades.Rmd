@@ -10,9 +10,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Llegim les dades:
-
-```{r, warning=FALSE, message=FALSE}
-library(dplyr); library(stringr); library(tibble); library(stringi); library(purrr); library(tidyverse)
+```{r,}
+library(dplyr)
+library(stringr)
+library(tibble)
+library(stringi)
 
 leer_loteria <- function(archivo) {
   
@@ -111,15 +113,19 @@ leer_loteria <- function(archivo) {
 }
 
 
+
 ```
 
 #MAIN:
 
 ```{r}
+library(purrr); library(tidyverse)
+
 #Años
 a <- 2015:2024
 archivos <- paste0("dades/b", a, ".txt")
 datos_loteria <- map_dfr(archivos, leer_loteria)
 ```
+
 
 
