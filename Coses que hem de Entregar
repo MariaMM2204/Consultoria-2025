@@ -5,3 +5,35 @@ Recordeu que cal entregar la següent documentació:
 - Informe
 - Presentació
 - Pressupost
+
+
+
+1. Anàlisi de Freqüències (Hot & Cold Numbers)
+Aquest és el punt de partida clàssic per identificar patrons en els números premiats:
+
+Terminacions més repetides: Analitzar quins dígits finals (1 xifra, 2 xifres i 3 xifres) han sortit més vegades al llarg dels 10 anys.
+
+Números "calents": Identificar els números concrets que han aparegut en més d'un any a la llista de premis (especialment a la Pedrea).
+
+Anàlisi de Decenes i Centenes: Determinar si hi ha milers (per exemple, la sèrie dels 70.000 o dels 80.000) que concentren històricament més premis que d'altres.
+
+2. Anàlisi Temporal i Evolutiva
+Com que tenim la columna any, podem observar com ha canviat la loteria en la darrera dècada:
+
+Volum de premis: Comparar si el nombre total de premis repartits ha crescut o s'ha mantingut estable.
+
+Distribució per Categoria: Analitzar quina proporció de premis correspon a "Decena", "Centena" o "Terminació" cada any per veure si hi ha variacions en l'estructura del sorteig.
+
+3. Model de Probabilitat Empírica vs. Teòrica
+Aquest model serviria per comprovar si la realitat s'ajusta a la teoria de l'atzar:
+
+Distribució Uniforme: En un sorteig perfectament aleatori, tots els números haurien de sortir amb la mateixa freqüència a llarg termini. L'anàlisi permetria veure quins números estan "en deute" (no han sortit gaire) o quins "excedeixen" la seva probabilitat.
+
+Anàlisi de dispersió: Mesurar la distància mitjana entre els números premiats cada any.
+
+4. Visualització de Dades (Dashboard)
+Per fer l'anàlisi intel·ligible, crearia gràfics específics:
+
+Mapes de calor (Heatmaps): Per veure quins dies o terminacions concentren més quantitat de diners en premis.
+
+Gràfics de barres comparatius: Per veure el rendiment anual de cada miler (0-9999, 10000-19999, etc.).
