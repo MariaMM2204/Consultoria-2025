@@ -30,15 +30,25 @@ Per a realtizar el sorteig es fan servis dos bombos que giren simultàniament: u
 
 Tot i que el focus està en el Gordo, la realitat és que el sorteig és una pluja fina de premis petits que serveixen per "alimentar l'esperança" de cara a l'anys següent.
 
-| Premi                   | Import per dècim | Boles premiades     | Probalitat |
-|-------------------------|------------------|---------------------|------------|
-| 1r  premi ("el Gordo")  | 400.000€         | 1                   | 0,001%     |
-| 2n  premi               | 125.000€         | 1                   | 0,001%     |
-| 3r  premi               | 50.000€          | 1                   | 0,001%     |
-| 4rt premi               | 20.000€          | 2                   | 0,002%     |
-| 5é premi                | 6.000€           | 8                   | 0,008%     |
-| La Pedrea               | 100€             | 1.794               | 1,794%     |
-| Reintegrament           | 20€              | 1 de cada 10 xifres | 10,00%     |
+| Premi                   | Import per dècim | Boles premiades     | Probalitat  |
+|-------------------------|------------------|---------------------|-------------|
+| 1r  premi ("el Gordo")  | 400.000€         | 1                   | 0,001 %     |
+| 2n  premi               | 125.000€         | 1                   | 0,001 %     |
+| 3r  premi               | 50.000€          | 1                   | 0,001 %     |
+| 4rt premi               | 20.000€          | 2                   | 0,002 %     |
+| 5é premi                | 6.000€           | 8                   | 0,008 %     |
+| La Pedrea               | 100€             | 1.794               | 1,794 %     |
+
+| Premi                   | Import per dècim | Nº Premiat          | Probalitat  |
+|-------------------------|------------------|---------------------|-------------|
+| Aproximació 1r premi    | 200€             | 2                   | 0,002 %     |
+| Aproximació 2r premi    | 125€             | 2                   | 0,002 %     |
+| Aproximació 3r premi    | 96€              | 2                   | 0,002 %     |
+| Terminació              | 100€             | 1000 * 3            | 3,000 %     |
+| Centena                 | 100€             | 100 * 5             | 0,500 %     |
+| Reintegrament           | 20€              | 1 de cada 10 xifres | 10,00 %     |
+
+
 
 Aleshores amb aquesta informació la probabilitat de que et toqui el Gordo és la mateixa que la de qualsevol número, 0,001%. Gairebé el 99% dels números que reben premi directe del bombo són pedres de 100€ (1.794 de 1.807). Per altra banda, tenim un 10% de possibilitats de recuperar 20€ si l'última xifra del teu número coincideix amb la del Gordo.
 
