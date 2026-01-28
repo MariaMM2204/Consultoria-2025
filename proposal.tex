@@ -1,0 +1,414 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{setspace}
+% this is a lorem ipsum generator for adding dummy texts
+\usepackage{lipsum}
+\usepackage{tocloft}
+% to make the first rows bold in tables
+\usepackage{longtable}
+\usepackage{tabu}
+\usepackage{booktabs}
+% this makes list of figures appear in table of contents
+\usepackage[nottoc]{tocbibind}
+
+% for passing temporary notes
+\usepackage{todonotes}
+
+\usepackage{morefloats}
+\usepackage{float}
+
+% highlighting
+\usepackage{soul}
+
+% referencing mutliple things with a single command - \cref
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+
+% this makes dots in table of contents
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+% to change the title of contents
+% \renewcommand{\contentsname}{Whatever}
+
+% line numbers for review purposes
+% this package might not be available in default latex installation 
+% get it by 'sudo tlmgr install lineno'
+%\usepackage{lineno}
+%\linenumbers
+
+% this allows checkmarks in the file
+\usepackage{amssymb}
+\DeclareUnicodeCharacter{2714}{\checkmark}
+
+% to be able to include latex comments
+\newenvironment{dummy}{}{}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+\onehalfspacing
+\pagenumbering{gobble} 
+%\begin{titlepage} 
+\begin{center}
+ \vspace*{2\baselineskip} 
+\includegraphics[width=0.25\textwidth]{UAB.png}\\
+\vspace*{5\baselineskip}
+\normalsize{Universitat Autònoma de Barcelona}\\
+\normalsize{\textbf{Consultoria Estadística}}
+ \LARGE{\textbf{}}\\
+ \vspace*{5\baselineskip} 
+\Large{\textbf{LOTERIA DE NADAL}}\\ 
+\vspace*{2\baselineskip} 
+\Large{Maria Marín Méndez (1668394) \\ Andrea Acuña Villagaray (1639232)}\\
+\vspace*{3\baselineskip}
+\Large{\textbf{29 Gener, 2026}}\\ 
+\end{center} 
+% \end{titlepage} 
+\doublespacing 
+\hypersetup{linkcolor = black} 
+\newpage 
+\pagenumbering{roman} 
+\tableofcontents 
+\addcontentsline{toc}{section}{\contentsname} 
+\newpage % list of figures have to be added manually to table of contents 
+\doublespacing 
+\newpage 
+\pagenumbering{arabic} 
+\hypersetup{linkcolor = blue}
+
+\section{Resum}\label{resum}
+
+El Sorteig Extraordinari de Nadal, també conegut com a Loteria de Nadal,
+és un dels sorteigs més populars que se celebra a Espanya cada desembre
+des de l'any 1812.
+
+L'objectiu principal d'aquest estudi es centra en l'anàlisi exhaustiva
+dels resultats històrics del sorteig, així com el desenvolupament d'un
+model capaç de predir els números guanyadors de la Loteria de Nadal.
+
+\newpage
+
+\section{Descripció del conjunt de
+dades}\label{descripciuxf3-del-conjunt-de-dades}
+
+\subsection{Introducció de les dades}\label{introducciuxf3-de-les-dades}
+
+En aquest repositori es recull el desenvolupament del Treball Final de
+Consultoria Estadística 2025, centrat en l'anàlisi exhaustiva de la
+Loteria de Nadal des de la seva vessant més tècnica. L'objectiu no és
+sols descriure el sorteig, sinó avaluar amb rigor estadístic si la
+variabilitat dels resultats històrics (des del 2000 fins a l'anys 2025)
+respon purament a l'atzar o si existeixen anomalies mesurables en
+l'homogeneïtat del sistes,
+
+A través de metodologies de web scraping, tests d'independència \ldots..
+
+La Loteria de Nadal no és sols un sorteig de boles; és l'unic moment de
+l'any en què un país sencer es posa d'acord per ignorar les lleis de
+l'estadística. Des d'un punt de vista matemàtic, és un ``impost a
+l'esperança'', però des del punt de vista de lesa dades, és un
+ecosistema fascinant.
+
+\textbf{L'arquitectura del ``GORDO''}
+
+La loteria no ven números a l'atzar, sinó que segueix una jerarquia
+rígida que determina quants diners es mouen i quina probabilitat real
+tens de guanyar.
+
+El sistema treballa amb un ventall de 100.000 números (des del 00000
+fins al 99999). Això ens deixa una probabilitat de guanyar el primer
+premi amb un sol dècim de un 0.001\%.
+
+Per al 2025, SELAE (Societat Estatal Loteries i Apostes de l'Estat) va
+emetre 197 sèries de cada número. Això significa que de cada número n'hi
+ha 197 billets idèntic repartits per tot l'estat. On cada sèroe es
+dovodeox en 10 dècims, el que ens dona un total de 1970 dècims per cada
+número.
+
+\begin{itemize}
+\tightlist
+\item
+  Preu del dècim: 20€
+\item
+  Recaptació potencila, si es ven tot, el sorteig mou 3940 milions
+  d'euros. D'aquests, el 705 es destina a premis.
+\end{itemize}
+
+El que veiem a la tele és folkore, però el que hi ha dins dels bombos és
+física pura. com ens explica el professor Badiella, el sistema està
+dissenyat per se homogeni.
+
+Hi ha 100.000 boles al bombo gran, totes fetes de gusta deboic, amb un
+diàmetre de 3cm i un pes unificat. On per evitar que el pes de la
+pintura alteri el camí de la bola cap a la trompeta, els números estan
+impresos amb l'àser. Així s'elimina la teoria que els números amb més
+``tinta'', com el 88.888, pesen més que el 11.111.
+
+Per a realtizar el sorteig es fan servis dos bombos que giren
+simultàniament: un per als números i un latre amb les 1807 boles de
+premis. fins que el bombo petit no queda buit, el sorteig no es dona per
+acabat.
+
+\textbf{El repartiment del ``Pastís''}
+
+Tot i que el focus està en el Gordo, la realitat és que el sorteig és
+una pluja fina de premis petits que serveixen per ``alimentar
+l'esperança'' de cara a l'anys següent.
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+Premi & Import per dècim & Boles premiades & Probabilitat \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+1r premi (``el Gordo'') & 400.000€ & 1 & 0,001\% \\
+2n premi & 125.000€ & 1 & 0,001\% \\
+3r premi & 50.000€ & 1 & 0,001\% \\
+4rt premi & 20.000€ & 2 & 0,002\% \\
+5é premi & 6.000€ & 8 & 0,008\% \\
+La Pedrea & 100€ & 1.794 & 1,794\% \\
+Reintegrament & 20€ & 1 de cada 10 xifres & 10,00\% \\
+\end{longtable}
+
+Aleshores amb aquesta informació la probabilitat de que et toqui el
+Gordo és la mateixa que la de qualsevol número, 0,001\%. Gairebé el 99\%
+dels números que reben premi directe del bombo són pedres de 100€ (1.794
+de 1.807). Per altra banda, tenim un 10\% de possibilitats de recuperar
+20€ si l'última xifra del teu número coincideix amb la del Gordo.
+
+Hem de recordar que per als tres primers premis, el premi realment és
+menor, ja que Hisenda entra al joc aplicant un 20\% d'impost a qualsevol
+premi que superi els 40.000€. Això vol dir que, el guanyador del primer
+premi realment es de 328.000€, ja que els premiers 40.000€ estan exempts
+i es paga 20\% dels 360.000€ restant. El segon premi sseria de 108.000€
+i del trecer 48.000€.
+
+Per on podem començar l'anàlisi?
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Històric de terminacions: quins números han sortir més.
+\item
+  Geografia de la sort: Analitzar si és veritat que el premi toca més a
+  Madrid o Barcelona, o si és simplement perquè s'hi venene més dècims.
+\item
+  Simulació de Montecarlo (proposta gemini): crear un script en R que
+  simuli 10.000 sortejos per veure queantes vegades guanyaries el Gordo
+  si juguessis el mateix número durant 100 anys.
+\end{enumerate}
+
+\section{Exploració de les dades}\label{exploraciuxf3-de-les-dades}
+
+A continuació presenterem diverses estadístiques descriptives així com
+visualitzacions gràfiques que permetràn poder observar el comportament
+de les dades.
+
+\subsection{Lectura de dades}\label{lectura-de-dades}
+
+En primer lloc, realitzarem una lectura inicial de tots els números
+premiats en el sorteig de la Loteria de Nadal corresponents al període
+entre 2000 i 2025. Les dades utilitzades provenen dels resultats
+oficials publicats un cop finalitzat cada sorteig.
+
+A l'endemà del sorteig, es publica el següent arxiu per comprovar si el
+número ha sigut premiat:
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{loteria.png}
+  \caption{Resultats Sorteig loteria de nadal 2023}
+\end{figure}
+
+El codi utilitzat per a la lectura i el processament de les dades
+s'implementarà a través d'un script extern, el qual importarem
+mitjançant la funció d'R source().
+
+A la taula següent mostrarem alguns exemples dels premis per veure amb
+quines dades treballarem:
+
+La taula mostra un extracte dels números premiats corresponents al
+sorteig del 2024. Cada fila representa un número premia, identificat per
+la seva xifra, juntament amb informació addicional com la lletra
+associada.
+
+Hi han tres tipus de lletra que ens podem trobar dins del nostre
+dataset:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Lletra \textbf{t}:
+\item
+  Lletra \textbf{a}:
+\item
+  Lletra \textbf{b}:
+\item
+  Lletra \textbf{c}:
+\end{enumerate}
+
+Finalment, també obtindrem els diners premiats, la categoria del premi,
+l'any i en quina moneda s'ha repertit els premis. Ja que ens els primers
+anys tindrem la moneda com a pessetes espanyoles.
+
+\subsection{Anàlisi descriptiva}\label{anuxe0lisi-descriptiva}
+
+(Posar taula: Estadística descriptiva conjunt de dades)
+
+Aquest conjunt de dades compta amb un dataset corresponent a cada any
+analitzat, amb una mida mitjana de 4000 números premiats per any. Així
+que tindrem una mostra suficient per dur a terme el nostra anàlisis.
+
+\subsection{Visualització Gràfica}\label{visualitzaciuxf3-gruxe0fica}
+
+A continuació visualitzarem diverses representacions gràfiques.
+
+(Posar: Gràfic distribució números)
+
+(Posar: Última xifra números premiats)
+
+(Fer: Quantitat premis per categoria (decena, centena\ldots), modo serie
+temporal amb punts)
+
+(Probar Heatmap a veure si es veu bé)
+
+(Fer: Interpretació)
+
+\subsection{Discussió possibles valors
+atípics}\label{discussiuxf3-possibles-valors-atuxedpics}
+
+Explicar com tractarem lo de que van cambiant el sorteig + PESETAS /
+EUROS
+
+Que fem???
+
+\section{Aplicació d'algorismes per la
+modelització}\label{aplicaciuxf3-dalgorismes-per-la-modelitzaciuxf3}
+
+\subsection{Metodologia}\label{metodologia}
+
+Hi ha diversos algorismes que podem aplicar per desenvolupar un model
+predictiu, en aquest treball utilitzarem l'algorisme anomenat x.
+
+X és una tècnica on \ldots. D'aquesta manera el model podrà\ldots{}
+
+x calcula \ldots. i \ldots.
+
+\subsection{Entranament del model amb el conjunt de
+dades}\label{entranament-del-model-amb-el-conjunt-de-dades}
+
+Per entrenar el model amb \ldots{} hem \ldots.. D'aquesta manera, podrem
+analitzar\ldots.
+
+Hem dividir el dataset en conjunts d'entrenament i validació, amb les
+dades de l'any 2000 al 2024 dels resultats per entrenar el model i
+l'últim concurs realitzat al 2025 per a fer la validació. Així podrem
+observar el rendiment del model.
+
+Un cop preparada la mostra d'entrenament,\ldots. Ja realitzat tot el
+prepossessing, ja podem definir i entrenar el model.
+
+L'estructura d'aquest es veu tal que:
+
+\section{Resultats}\label{resultats}
+
+\subsection{Presentació dels
+resultats}\label{presentaciuxf3-dels-resultats}
+
+\subsection{Mètriques d'avaluació}\label{muxe8triques-davaluaciuxf3}
+
+\newpage
+
+\section{Conclusions}\label{conclusions}
+
+\newpage
+
+\section{Annexos}\label{annexos}
+
+A continuació, introduirem el directori de Git-Hub on podràs trobar tot
+el codi d'R utilitzat:
+
+\url{https://github.com/MariaMM2204/Consultoria-2025}
+
+\newpage
+
+\section{References}\label{references}
+
+\end{document}
